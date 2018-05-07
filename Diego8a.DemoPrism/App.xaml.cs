@@ -1,4 +1,5 @@
-﻿using Prism;
+﻿using Diego8a.DemoPrism.View;
+using Prism;
 using Prism.Ioc;
 using Prism.Unity;
 using Xamarin.Forms;
@@ -21,11 +22,13 @@ namespace Diego8a.DemoPrism
         protected override async void OnInitialized()
         {
             InitializeComponent();
+            await NavigationService.NavigateAsync("NavigationPage/MainPage");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterForNavigation<NavigationPage>();
+            containerRegistry.RegisterForNavigation<MainPage>();
         }
     }
 }
